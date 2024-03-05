@@ -25,24 +25,8 @@ async function getData() {
     try {
         const response = await fetch(url, options);//inväntar svar från fetch
         const result = await response.json();//inväntar svar från konverteringen till javascript
-        console.log(result);
-
-
-
-        /*
-        //alla dykplatser i konsollen
-        result.data.forEach(diveSite => {
-            console.log("Index: ", diveSite.index);
-            console.log("ID: ", diveSite.id);
-            console.log("Name: ",diveSite.name);
-            console.log("Location: ", diveSite.location);
-            console.log("Region: ", diveSite.region);
-            console.log("Ocean: ", diveSite.ocean);
-            console.log("Latitud: ", diveSite.lat);
-            console.log("Longitud: ", diveSite.lng);
-        });*/
-        
        
+
         let divespotEl = document.getElementById("info_div");//hämtar div elementet från HTML-koden
         divespotEl.innerHTML = ''; //rensar innehåll
 
@@ -57,6 +41,24 @@ async function getData() {
            regionEl.textContent = "Region: " + diveSite.region;
            nameEl.textContent = "Name: " + diveSite.name;
            locationEl.textContent = "Location: " + diveSite.location;
+
+           //eventlistener vid klick på namn 
+           nameEl.addEventListener("click", function() {
+
+            //öppna nytt fönster med karta
+            let mapURL = 'https://maps.example.com/?lat=' + diveSite.lat + '&lng=' + diveSite.lng;
+
+            //nytt fetchanrop
+            fetch(mapURL)
+            .then(response => response.json())
+            .then(data => {
+
+            })
+            .catch(error => {
+                console.error('Det uppstod ett fel:', error);
+            });
+
+           });
 
            //lägg till nya elementen till siteContainer-div elementet
            siteContainer.appendChild(regionEl);
