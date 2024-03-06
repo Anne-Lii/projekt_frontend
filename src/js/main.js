@@ -43,6 +43,8 @@ async function getData() {
 
     showLoadingAnimation()
 
+    
+
     //options med mina nycklar och metod
     const options = {
         method: 'GET',
