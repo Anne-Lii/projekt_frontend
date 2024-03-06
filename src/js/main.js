@@ -4,8 +4,19 @@
 const inputEl = document.getElementById("search");//inputfält för sök
 const searchBtnEl = document.getElementById("searchBtn");//sökknapp
 const mapEl = document.getElementById("map");//div container för kartan
+const countryEl = document.getElementById("country");//h3 element för country
 const divespotEl = document.getElementById("info_div");//div element för dykplatsernahämtar
-const headlineEl = document.getElementById("headline_country");
+const loadingAnimationEl = document.getElementById("loadingAnimation");
+
+  // Visa laddningsanimationen
+  function showLoadingAnimation() {
+    loadingAnimationEl.style.display = "block";
+}
+
+// Dölj laddningsanimationen
+function hideLoadingAnimation() {
+    loadingAnimationEl.style.display = "none";
+}
 
 //startkoordinater för kartan vid sidladdning
 const map = L.map('map').setView([58.03222280237399, 14.349985267448993], 12);
@@ -22,18 +33,16 @@ let marker = L.marker([58.03222280237399, 14.349985267448993]).addTo(map);
 //"Här är jag" funktion
 L.control.locate().addTo(map);
 
-
 searchBtnEl.addEventListener("click", getData)//eventlistener på sökknappen
-
 
 //async/await funktion
 async function getData() {
 
     const input = inputEl.value;//variabel men värdet från inputfältet på index.html sidan
     const url = 'https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite?country=' + input;//URL för API plus input från sökfältet
-   
-    headlineEl.innerHTML = input;//skriver ut input som rubrik på sidan
-    
+
+    showLoadingAnimation()
+
     //options med mina nycklar och metod
     const options = {
         method: 'GET',
@@ -47,7 +56,6 @@ async function getData() {
         const response = await fetch(url, options);//inväntar svar från fetch
         const result = await response.json();//inväntar svar från konverteringen till javascript
 
-        
         divespotEl.innerHTML = ''; //rensar innehåll
 
         //skapar nya element för dykplatserna
@@ -95,9 +103,11 @@ async function getData() {
                     .catch(error => {
                         console.error('Det uppstod ett fel:', error);
                     });
-               
+
             });
         });
+
+        countryEl.textContent = input;
 
     } catch (error) {
         console.log("Det har uppstått ett fel");

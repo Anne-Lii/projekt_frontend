@@ -1,12 +1,13 @@
 @use "base";
 
-
 body {
     width: 100%;
+   
 }
 
 #container {
     width: 100%;
+    
 }
 
 .hero {
@@ -50,7 +51,7 @@ body {
         padding-bottom: 100px;        
     }
     h1:hover {
-        -webkit-text-stroke: 2px #fff;
+        -webkit-text-stroke: 1px #fff;
         color: transparent;
     }
     label {
@@ -68,15 +69,24 @@ body {
         color: grey;        
     }
 
-    button {
-        height: 50px;
+    #searchBtn {
+        background-color: #95c7f5;
+        height: 40px;
         width: 100px;
-        margin-top: 50px;
-        border-radius: 10px;
+        padding: 15px 0 0 0;        
+        border-radius: 5px;
         font-size: 20px;
-        color: grey;
+        color: #fff;
         cursor: pointer;
+        z-index: 12;
+        margin: auto;
+        margin-top: 20px;
     }
+}
+
+#counrty {
+    font-size: 150px;
+    color: pink;
 }
 
 #grid-container {
@@ -103,11 +113,6 @@ body {
             font-size: 35px;
             text-decoration: underline;
         }
-        #headline_country {
-            z-index: 10;
-            font-size: 200px;
-            color: pink;
-        }
     }
 }
 
@@ -116,6 +121,5 @@ body {
     grid-row: 1/2;
     height: 400px;
     margin: 200px 20px 200px 20px;
-    border-radius: 100px;
+    
 }
-
