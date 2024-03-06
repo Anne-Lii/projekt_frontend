@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.scss">
     <script src="js/main.js" type="module"></script>
-
     <title>Projekt Frontend</title>
+
+    <!-- FÖR KARTA LEAFLET -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+
 </head>
+
 <body>
-    <h1>Hitta din dykplats</h1>
-    <Label for="search">Skriv in ett land för att hitta dykplatserna i det landet: </Label>
-    <input type="text" id="search">
-   <button id="searchBtn">SÖK</button>
-    <div id="info_div"></div>
-    <div id="mapContainer"></div>
+    <div id="container">
+        <div class="hero">
+
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="media/dyk_chromis.mp4" type="video/mp4">
+                <!-- Video av Adrien JACTA: https://www.pexels.com/sv-se/video/hav-natur-simning-fisk-14920042/ -->
+            </video>
+
+            <div id="searchBar">
+                <h1>Divingspots</h1>
+                <Label for="search">Vilket land vill du dyka i? </Label><br>
+                <input type="text" id="search"><br>
+                <button id="searchBtn">SÖK</button>
+            </div>
+
+        </div>
+        <div id="grid-container">
+            <div id="map"></div>
+            <div id="info_div">
+                <h2 id="headline_country"></h2>
+            </div>
+        </div>
+    </div>
 </body>
+
+
 </html>

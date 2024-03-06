@@ -1,0 +1,17 @@
+//färgvariabler
+$primaryBackground: #3e6ceb;
+$primaryColor: #9eb2e9;
+$darkerColor: darken($primaryColor, 40%);
+$lighterColor: lighten($primaryColor, 10%);
+
+//mixin för att centrera
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
