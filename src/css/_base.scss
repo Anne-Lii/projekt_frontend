@@ -1,8 +1,8 @@
 //färgvariabler
-$primaryBackground: #3e6ceb;
-$primaryColor: #9eb2e9;
+$primaryBackground: #fff;
+$primaryColor: #0845ee;
 $darkerColor: darken($primaryColor, 40%);
-$lighterColor: lighten($primaryColor, 10%);
+$lighterColor: lighten($primaryColor, 20%);
 
 //mixin för att centrera
 @mixin flexCenter() {

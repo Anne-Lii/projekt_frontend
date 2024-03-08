@@ -15,6 +15,7 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+  
 
 </head>
 
@@ -22,21 +23,23 @@
     <div id="container">
         <div class="hero">
 
-            <video autoplay loop muted plays-inline class="back-video">
+            <video autoplay loop muted class="back-video">
                 <source src="media/dyk_chromis.mp4" type="video/mp4">
                 <!-- Video av Adrien JACTA: https://www.pexels.com/sv-se/video/hav-natur-simning-fisk-14920042/ -->
             </video>
 
             <div id="searchBar">
                 <h1>Divingspots</h1>
-                <Label for="search">Vilket land vill du dyka i? </Label><br>
+                <Label for="search">Skriv in ett land </Label><br>
                 <input type="text" id="search"><br>
-                <div id="searchBtn" href="#grid-container" >SÖK</div>
+                <span id="message"></span>
+                <div id="searchBtn">SÖK</div>
                 <div id="loadingAnimation"></div>
+                <div id="error_message"></div>
             </div>
 
         </div>
-        <h3 id="country"></h3>
+        <h3 id="country"></h3> <!-- tomt h3 element för input från inputfältet -->
         <div id="grid-container">
             <div id="map"></div>
             <div id="info_div"></div>
