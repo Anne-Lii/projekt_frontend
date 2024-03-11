@@ -46,7 +46,6 @@ body {
         height: auto;
     }
 }
-
 @media (max-aspect-ratio: 16/9) {
     .back-video {
         width: auto;
@@ -96,7 +95,7 @@ body {
     }
 
     #searchBtn {
-        background-color: #95c7f5;
+        background-color: base.$evenlighterColor;
         height: 45px;
         width: 140px;
         max-width: 100%;
@@ -105,7 +104,6 @@ body {
         font-size: 30px;
         color: #fff;
         cursor: pointer;
-        z-index: 12;
         margin: auto;
         margin-top: 20px;
     }
@@ -206,7 +204,6 @@ body {
 
         label {
             font-size: 25px;
-            max-width: 100%;
         }
 
         input {

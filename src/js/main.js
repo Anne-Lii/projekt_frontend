@@ -76,7 +76,7 @@ async function getData() {
 
         divespotEl.innerHTML = ''; //rensar innehåll
 
-        result.data.sort((a, b) => {
+        result.data.sort((a, b) => {//sorterar datan i bokstavsordning
             if (a.name < b.name) {
                 return -1;
             } else if (a.name > b.name) {
@@ -111,8 +111,6 @@ async function getData() {
 
             //skriv ut till DOM
             divespotEl.appendChild(siteContainer);
-
-            console.table(diveSite);
 
             //eventlistener vid klick på Dykplatsens namn 
             nameEl.addEventListener("click", function () {
