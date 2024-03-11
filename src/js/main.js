@@ -1,3 +1,4 @@
+//kod skriven av Anne-Lii Hansen VT 2024
 "use strict"
 
 //hämtar element från HTML koden
@@ -9,6 +10,8 @@ const countryEl = document.getElementById("country");//h3 element för country
 const divespotEl = document.getElementById("info_div");//div element för dykplatsernahämtar
 const loadingAnimationEl = document.getElementById("loadingAnimation");//diven till laddnings animationen
 const error_messageEl = document.getElementById("error_message");//div felmeddelande
+const scrollupEl = document.getElementById("scrollup");//scrolla upp överst till sidan
+
 
 // funktion visa och dölja laddningsanimationen
 function showLoadingAnimation() {
@@ -147,7 +150,11 @@ async function getData() {
 
         hideLoadingAnimation();//gömmer laddningsanimationen igen vid resultat
 
-        countryEl.scrollIntoView({ behavior: "smooth", block: "start" });//scrollar ner till resultatet när fetchen laddat klart       
+        countryEl.scrollIntoView({ behavior: "smooth", block: "start" });//scrollar ner till resultatet när fetchen laddat klart  
+
+        scrollupEl.addEventListener("click", function () {//vid klick på pil längst ner scrollas man upp till rubriken 
+            countryEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        })
 
     } catch (error) {
         console.error('Det uppstod ett fel:', error);
