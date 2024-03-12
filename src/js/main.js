@@ -89,8 +89,8 @@ async function getData() {
         //skapar nya element för dykplatserna
         result.data.forEach(diveSite => {
             let siteContainer = document.createElement("div");
-            let nameEl = document.createElement("h1");
-            let regionEl = document.createElement("h2");
+            let nameEl = document.createElement("h3");
+            let regionEl = document.createElement("h4");
             let locationEl = document.createElement("p");
             let latEl = document.createElement("p");
             let lonEl = document.createElement("p");
