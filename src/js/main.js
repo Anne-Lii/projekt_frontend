@@ -27,7 +27,7 @@ inputEl.addEventListener("keyup", checkInput);
 function checkInput() {
 
     if (inputEl.value.length < 5) {
-        messageEl.innerHTML = "minst 5 tecken";
+        messageEl.innerHTML = "5 characters minimum";
     } else {
         messageEl.innerHTML = "";
     }
